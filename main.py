@@ -1,12 +1,8 @@
-#!/usr/bin/env python3
-
-def greet(name: str) -> str:
-    return f"Hello, {name}!"
+from name_ui import launch_ui
 
 
-def main() -> None:
-    name = input("Enter your name: ").strip() or "World"
-    print(greet(name))
+def main():
+    launch_ui()
 
 
 if __name__ == "__main__":
