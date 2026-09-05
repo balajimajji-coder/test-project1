@@ -1,33 +1,22 @@
 import tkinter as tk
+from validators import validate_name
 
 
 def launch_ui():
     def show_name():
-        name = name_entry.get().strip()
+        name = name_entry.get()
 
-        if not name:
-            result_label.config(
-                text="Please enter your name.",
-                fg="red"
-            )
-            return
+        is_valid, message = validate_name(name)
 
-        if len(name) < 2:
+        if not is_valid:
             result_label.config(
-                text="Name must be at least 2 characters long.",
-                fg="red"
-            )
-            return
-
-        if not all(char.isalpha() or char.isspace() for char in name):
-            result_label.config(
-                text="Name can only contain letters and spaces.",
+                text=message,
                 fg="red"
             )
             return
 
         result_label.config(
-            text=f"Hello, {name}!",
+            text=f"Hello, {name.strip()}!",
             fg="green"
         )
 
@@ -53,4 +42,8 @@ def launch_ui():
     result_label = tk.Label(
         root,
         text="",
-        font
+        font=("Arial", 11)
+    )
+    result_label.pack(pady=10)
+
+    root.mainloop()
