@@ -1,4 +1,4 @@
-"# test-project1"
+# test-project1
 
 A simple Python desktop application built with Tkinter that allows a user to enter their name and receive a greeting.
 
@@ -16,7 +16,7 @@ A simple Python desktop application built with Tkinter that allows a user to ent
 ## Project Structure
 
 ```text
-my-name-app/
+test-project1/
 │
 ├── main.py
 ├── name_ui.py
